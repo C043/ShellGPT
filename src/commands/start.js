@@ -1,7 +1,6 @@
 import { resolve, join } from "path";
 import { fileURLToPath } from "url";
 import jsonfile from "jsonfile";
-import chalk from "chalk";
 import OpenAI from "openai";
 
 const file = join(resolve(fileURLToPath(import.meta.url), "../../.."), "configuration.json")
@@ -28,7 +27,6 @@ const main = async (prompt) => {
 }
 
 const Start = prompt => {
-    console.log(chalk.green("Working on it"))
     main(prompt)
 }
 
