@@ -22,18 +22,14 @@ const prompt = process.argv[2]
 
 try {
     console.log(chalk.green(figlet.textSync("ShellGPT")))
-    if (key) {
-        if (prompt !== "--configure") {
-            console.log(chalk.green(figlet.textSync("ChatGPT")))
-            Start(prompt)
-        } else if (prompt === "--configure") {
-            configure(process.argv[3])
-        }
+    if (prompt !== "--configure" && prompt !== "-h" && prompt !== "--help") {
+        Start(prompt)
     } else if (prompt === "--configure") {
         configure(process.argv[3])
-
     } else if (prompt === "-h" || prompt === "--help") {
         usage()
+    } else if (prompt === "--configure") {
+        configure(process.argv[3])
     } else throw new Error()
 } catch (error) {
     console.log("Invalid prompt")

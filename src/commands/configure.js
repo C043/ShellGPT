@@ -10,6 +10,7 @@ const configure = (key) => {
     }
     try {
         jsonfile.writeFile(file, obj)
+        console.log("API KEY successfully configured")
     } catch (e) {
         console.log(e)
     }
