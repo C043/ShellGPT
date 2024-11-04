@@ -14,6 +14,7 @@ git clone https://github.com/c043/chatGPT-cli
 ```
 2. Inside the root directory of the project use npm to install globally
 ```bash
+npm i
 npm i -g .
 
 # The system might need your root privileges
