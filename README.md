@@ -1,4 +1,4 @@
-# ChatGpt - cli
+# ShellGPT
 
 Small tool that let you use ChatGPT directly from the shell.
 

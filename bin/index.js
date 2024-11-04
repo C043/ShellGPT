@@ -8,8 +8,11 @@ import configure from "../src/commands/configure.js"
 import { fileURLToPath } from 'url'
 
 const usage = () => {
-    console.log(`Usage:
-chatGPT "your prompt"`)
+    console.log("Usage:")
+    console.log()
+    console.log("-h --help\tShow usage")
+    console.log("--configure\tAdd your openai api key")
+    console.log("gpt [your prompt]")
 }
 
 const file = join(resolve(fileURLToPath(import.meta.url), "../.."), "configuration.json")
@@ -18,6 +21,7 @@ const key = jsonfile.readFileSync(file).key
 const prompt = process.argv[2]
 
 try {
+    console.log(chalk.green(figlet.textSync("ShellGPT")))
     if (key) {
         if (prompt !== "--configure") {
             console.log(chalk.green(figlet.textSync("ChatGPT")))
@@ -27,11 +31,10 @@ try {
         }
     } else if (prompt === "--configure") {
         configure(process.argv[3])
-    } else {
-        console.log("You need to add your openai key")
-        console.log()
-        console.log("Try running gpt --configure [your key]")
-    }
+
+    } else if (prompt === "-h" || prompt === "--help") {
+        usage()
+    } else throw new Error()
 } catch (error) {
     console.log("Invalid prompt")
     console.log()
