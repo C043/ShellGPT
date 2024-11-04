@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import figlet from 'figlet'
 import { resolve, join } from 'path'
 import jsonfile from 'jsonfile'
 import chalk from 'chalk'
@@ -19,7 +20,7 @@ const prompt = process.argv[2]
 try {
     if (key) {
         if (prompt !== "--configure") {
-            console.log(chalk.green("Starting the application"))
+            console.log(chalk.green(figlet.textSync("ChatGPT")))
             Start(prompt)
         } else if (prompt === "--configure") {
             configure(process.argv[3])
