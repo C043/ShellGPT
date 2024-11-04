@@ -26,5 +26,5 @@ gpt --configure [your key]
 ```
 4. Use chatGPT!
 ```bash
-gpt "What is the sense of life?"
+gpt "What is the meaning of life?"
 ```
