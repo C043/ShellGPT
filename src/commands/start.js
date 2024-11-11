@@ -16,13 +16,13 @@ const main = async (prompt) => {
                 role: "user",
                 content: prompt
             }],
-            model: "gpt-3.5-turbo"
+            model: jsonfile.readFileSync(file).model
         })
         console.log(chatCompletion.choices[0].message.content)
     } catch (e) {
-        console.log("You need to add your openai key")
+        console.log("You need to add your openai key or your openai key is wrong")
         console.log()
-        console.log("Try running gpt --configure [your key]")
+        console.log("Try running gpt configure")
     }
 }
 
