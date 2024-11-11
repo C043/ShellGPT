@@ -2,11 +2,16 @@ import { resolve, join } from "path";
 import { fileURLToPath } from "url";
 import jsonfile from "jsonfile";
 import OpenAI from "openai";
+import ora from "ora";
 
 const file = join(resolve(fileURLToPath(import.meta.url), "../../.."), "configuration.json")
 
 
 const main = async (prompt) => {
+    const spinner = ora({
+        text: "Thinking about it...",
+        color: "green",
+    }).start()
     try {
         const client = new OpenAI({
             apiKey: jsonfile.readFileSync(file).key
@@ -18,9 +23,9 @@ const main = async (prompt) => {
             }],
             model: jsonfile.readFileSync(file).model
         })
-        console.log(chatCompletion.choices[0].message.content)
+        spinner.succeed(chatCompletion.choices[0].message.content)
     } catch (e) {
-        console.log("You need to add your openai key or your openai key is wrong")
+        spinner.fail("You need to add your openai key or your openai key is wrong")
         console.log()
         console.log("Try running gpt configure")
     }
