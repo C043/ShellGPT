@@ -2,6 +2,8 @@
 
 Small tool that let you use ChatGPT directly from the shell.
 
+[![Demo ShellGPT](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=_zSZy0t-5gk)
+
 ## Rquisites
 1. Having Nodejs installed in your system
 2. Having GIT installed in your system
