@@ -2,8 +2,6 @@
 
 Small tool that let you use ChatGPT directly from the shell.
 
-[![ShellGPT Demo](https://img.youtube.com/vi/_zSZy0t-5gk/0.jpg)](https://www.youtube.com/watch?v=_zSZy0t-5gk)
-
 ## Rquisites
 1. Having Nodejs installed in your system
 2. Having GIT installed in your system
@@ -22,7 +20,7 @@ npm i -g .
 # The system might need your root privileges
 sudo npm i -g .
 ```
-3. Configure the tool with your api key
+3. Configure the tool with your api key and model of choice
 ```bash
 gpt configure -key
 gpt configure -model
