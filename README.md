@@ -24,7 +24,8 @@ sudo npm i -g .
 ```
 3. Configure the tool with your api key
 ```bash
-gpt configure
+gpt configure -key
+gpt configure -model
 ```
 4. Use chatGPT!
 ```bash
