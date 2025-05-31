@@ -8,7 +8,11 @@ class ShellGPT {
   constructor() {
     this.configurationHandler = new ConfigurationHandler();
     this.config = null;
-    this.rl = null;
+    this.rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+      prompt: chalk.green("> ")
+    });
     this.client = null;
     this.messages = [];
   }
@@ -26,7 +30,7 @@ class ShellGPT {
       this.rl.pause();
     }
 
-    const spinner = ora({ text: "Thinking about it...", color: "green" });
+    const spinner = ora({ color: "green" });
     console.log();
     spinner.start();
 
@@ -52,18 +56,8 @@ class ShellGPT {
     if (this.rl) this.rl.resume();
   }
 
-  async start(prompt) {
-    // Chat mode
-    console.log(
-      chalk.yellow(
-        "\nInteractive mode started. Type your messages. Ctrl+d to disconnect.\n"
-      )
-    );
-    this.rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
-      prompt: chalk.green("> ")
-    });
+  async start() {
+    console.log(chalk.yellow("\nType your messages. Ctrl+c to close.\n"));
 
     this.rl.prompt();
     this.rl.on("line", async line => {
