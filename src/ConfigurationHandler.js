@@ -98,13 +98,22 @@ class ConfigurationHandler {
           {
             name: "GPT-4o",
             value: "gpt-4o",
-            description:
-              "Our high-intelligence flagship model for complex, multi-step tasks"
+            description: "Great for most tasks"
           },
           {
-            name: "GPT-3.5 Turbo",
-            value: "gpt-3.5-turbo",
-            description: "A fast, inexpensive model for simple tasks"
+            name: "GPT-o4 mini",
+            value: "o4-mini",
+            description: "Fastest at advanced reasoning"
+          },
+          {
+            name: "GPT-4.1",
+            value: "gpt-4.1",
+            description: "Smartest model for complex tasks"
+          },
+          {
+            name: "GPT-4.1 mini",
+            value: "gpt-4.1-mini",
+            description: "Faster for everyday tasks"
           }
         ]
       });
