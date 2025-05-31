@@ -13,7 +13,7 @@ class ConfigurationHandler {
     this.configuration = null;
     this.defaultConfig = {
       key: "",
-      model: "gpt-4"
+      model: "gpt-4o"
     };
 
     this.ensureDirectoryExists();
@@ -87,7 +87,7 @@ class ConfigurationHandler {
       this.set("key", key);
       console.log("✅ API key saved.");
     } catch (err) {
-      console.error("❌ Failed to save key:", e.message);
+      console.error("❌ Failed to save key");
     }
   }
   async configureModel() {
@@ -120,7 +120,7 @@ class ConfigurationHandler {
       this.set("model", model);
       console.log("✅ Model saved.");
     } catch (err) {
-      console.error("❌ Failed to save model:", e.message);
+      console.error("❌ Failed to save model");
     }
   }
 }
