@@ -28,5 +28,5 @@ gpt configure
 ```
 4. Use chatGPT!
 ```bash
-gpt "What is the meaning of life?"
+gpt
 ```
