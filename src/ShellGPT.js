@@ -3,6 +3,7 @@ import OpenAI from "openai";
 import ora from "ora";
 import readline from "readline";
 import chalk from "chalk";
+import wrapAnsi from "wrap-ansi";
 
 class ShellGPT {
   constructor() {
@@ -46,7 +47,12 @@ class ShellGPT {
       //spinner.succeed("Done.");
       spinner.stop();
 
-      console.log(chalk.cyanBright(`< ${reply}\n`));
+      console.log(
+        wrapAnsi(chalk.cyanBright(`< ${reply}\n`), 80, {
+          hard: false,
+          wordWrap: true
+        })
+      );
     } catch (err) {
       spinner.fail("Invaild or missing OpenAI key");
       console.log("Try running: gpt configure -key\n");
