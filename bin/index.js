@@ -15,7 +15,6 @@ const usage = () => {
 
 try {
   const prompt = process.argv.slice(2).join(" ");
-  console.log(prompt);
 
   const shellGPT = new ShellGPT();
   const configurationHandler = new ConfigurationHandler();
